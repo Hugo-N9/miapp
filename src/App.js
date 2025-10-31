@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import ThemeContext from './context/ThemeContext';
-
 // Importar el Layout y las Páginas
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import TodoList from './components/TodoList/TodoList';
 import UserDirectory from './components/UserDirectory/UserDirectory';
+import Error404 from './components/Error404/Error404';
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -27,7 +27,7 @@ function App() {
           <Route path="directorio" element={<UserDirectory />} />
 
           {/* Ruta "Catch-all" para 404 (No encontrado) */}
-          <Route path="*" element={<h2>Página no encontrada</h2>} />
+          <Route path="*" element={<Error404 />} />
         </Route>
       </Routes>
     </div>
